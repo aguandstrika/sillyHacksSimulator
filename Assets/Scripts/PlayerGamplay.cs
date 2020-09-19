@@ -76,6 +76,7 @@ public class PlayerGamplay : MonoBehaviour {
         else {
             typingSound.GetComponent<AudioSource>().mute = true;
             lullaby.GetComponent<AudioSource>().mute = true;
+            audience.GetComponent<AudioSource>().mute = true;
         }
     }
 }
