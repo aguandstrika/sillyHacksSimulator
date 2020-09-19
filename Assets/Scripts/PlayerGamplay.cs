@@ -12,6 +12,9 @@ public class PlayerGamplay : MonoBehaviour {
     public LayerMask cafeteria;
     public LayerMask breakroom;
     public LayerMask workshop;
+    public GameObject typingSound;
+    public GameObject lullaby;
+    public GameObject audience;
     UIController ui;
     float time = 0;
     public float progress = 0;
@@ -32,13 +35,19 @@ public class PlayerGamplay : MonoBehaviour {
                 progress += rate * Time.deltaTime;
             ui.energy -= 2 * Time.deltaTime;
             ui.food -= 1 * Time.deltaTime;
-            GetComponent<AudioSource>().mute = false;
+            typingSound.GetComponent<AudioSource>().mute = false;
         }
         else
-            GetComponent<AudioSource>().mute = true;
+            typingSound.GetComponent<AudioSource>().mute = true;
         if (Physics.CheckSphere(transform.position, 0.3f, breakroom)) {
+            lullaby.GetComponent<AudioSource>().mute = false;
             if (ui.energy < 100)
                 ui.energy += 3 * Time.deltaTime;
+            audience.GetComponent<AudioSource>().mute = true;
+        }
+        else {
+            lullaby.GetComponent<AudioSource>().mute = true;
+            audience.GetComponent<AudioSource>().mute = false;
         }
         if (Physics.CheckSphere(transform.position, 0.3f, cafeteria)) {
             if (ui.food < 100)
@@ -63,6 +72,10 @@ public class PlayerGamplay : MonoBehaviour {
                 ui.fail();
                 gameOver = true;
             }
+        }
+        else {
+            typingSound.GetComponent<AudioSource>().mute = true;
+            lullaby.GetComponent<AudioSource>().mute = true;
         }
     }
 }
