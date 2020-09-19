@@ -26,12 +26,12 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         hourBar.GetComponent<RectTransform>().anchorMax = new Vector2(hours/48, 1);
-        hourText.GetComponent<TMP_Text>().text = hours.ToString();
+        hourText.GetComponent<TMP_Text>().text = System.Math.Round(hours, 1).ToString();
         energyBar.GetComponent<RectTransform>().anchorMax = new Vector2(energy / 100, 1);
-        energyText.GetComponent<TMP_Text>().text = energy.ToString();
+        energyText.GetComponent<TMP_Text>().text = System.Math.Round(energy).ToString();
         foodBar.GetComponent<RectTransform>().anchorMax = new Vector2(food / 100, 1);
-        foodText.GetComponent<TMP_Text>().text = food.ToString();
+        foodText.GetComponent<TMP_Text>().text = System.Math.Round(food).ToString();
         experienceBar.GetComponent<RectTransform>().anchorMax = new Vector2(experience / 100, 1);
-        experienceText.GetComponent<TMP_Text>().text = experience.ToString();
+        experienceText.GetComponent<TMP_Text>().text = System.Math.Round(experience).ToString();
     }
 }
