@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2727701434783489538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -361,6 +361,9 @@ MonoBehaviour:
   experienceBar: {fileID: 2357233366313577542}
   experienceText: {fileID: 2357233365712395495}
   experience: 100
+  winScreen: {fileID: 4460803360150865356}
+  deathScreen: {fileID: 2722822313015766510}
+  failScreen: {fileID: 828383216137683839}
 --- !u!1 &2357233364672487003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4665251759480742661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2306,7 +2309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8485470694625209232
 RectTransform:
   m_ObjectHideFlags: 0

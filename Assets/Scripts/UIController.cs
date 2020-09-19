@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,8 +20,21 @@ public class UIController : MonoBehaviour
     public GameObject experienceBar;
     public GameObject experienceText;
     public float experience;
+    public GameObject winScreen;
+    public GameObject deathScreen;
+    public GameObject failScreen;
 
     void Start() {
+    }
+
+    public void win() {
+        winScreen.SetActive(true);
+    }
+    public void die() {
+        deathScreen.SetActive(true);
+    }
+    public void fail() {
+        failScreen.SetActive(true);
     }
 
     // Update is called once per frame

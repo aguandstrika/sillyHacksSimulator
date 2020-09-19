@@ -5,6 +5,7 @@ using UnityEngine;
 public class Laptop : MonoBehaviour {
     // Start is called before the first frame update
     public GameObject progressBar;
+    public GameObject player;
     Transform laptopTransform;
     public float progress = 0;
     float startx;
@@ -17,6 +18,7 @@ public class Laptop : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        progress = player.GetComponent<PlayerGamplay>().progress;
         laptopTransform.localScale = new Vector3(progress * startwidth, 1, laptopTransform.localScale.z);
         laptopTransform.localPosition = new Vector3(startx + (startwidth - (progress * startwidth))*5,laptopTransform.localPosition.y, laptopTransform.localPosition.z);
     }
