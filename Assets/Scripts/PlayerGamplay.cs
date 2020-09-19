@@ -32,7 +32,10 @@ public class PlayerGamplay : MonoBehaviour {
                 progress += rate * Time.deltaTime;
             ui.energy -= 2 * Time.deltaTime;
             ui.food -= 1 * Time.deltaTime;
+            GetComponent<AudioSource>().mute = false;
         }
+        else
+            GetComponent<AudioSource>().mute = true;
         if (Physics.CheckSphere(transform.position, 0.3f, breakroom)) {
             if (ui.energy < 100)
                 ui.energy += 3 * Time.deltaTime;
